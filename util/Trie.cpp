@@ -11,7 +11,7 @@ using namespace std;
 // trie node
 struct TrieNode
 {
-    struct TrieNode *children[ALPHABET_SIZE];
+    struct TrieNode *children[26]; ///array
  
     // isWordEnd is true if the node represents
     // end of a word
@@ -66,20 +66,38 @@ bool search(struct TrieNode *root, const string key)
  
     return (pCrawl != NULL && pCrawl->isWordEnd);
 }
- 
+
+
+NULL = 0  false
+
+
+if(NULL){
+
+} 
+
+
+
 // Returns 0 if current node has a child
 // If all children are NULL, return 1.
 bool isLastNode(struct TrieNode* root)
 {
-    for (int i = 0; i < ALPHABET_SIZE; i++)
-        if (root->children[i])
-            return 0;
-    return 1;
+    for (int i = 0; i < 26 i++){
+
+        if (root->children[i]!=NULL){
+            return false;
+        }    
+    }        
+    return true;
 }
- 
+
+
+"shubhs"
+
+helping
+
 // Recursive function to print auto-suggestions for given
 // node.
-void suggestionsRec(struct TrieNode* root, string currPrefix)
+void suggestionsRec(struct TrieNode* root, string currPrefix)    //(hel)    help, helps,helping
 {
     // found a string in Trie with the given prefix
     if (root->isWordEnd)
@@ -89,10 +107,11 @@ void suggestionsRec(struct TrieNode* root, string currPrefix)
     }
  
     // All children struct node pointers are NULL
-    if (isLastNode(root))
+    if (isLastNode(root)){
         return;
+    }
  
-    for (int i = 0; i < ALPHABET_SIZE; i++)
+    for (int i = 0; i < 26; i++)
     {
         if (root->children[i])
         {
@@ -100,11 +119,13 @@ void suggestionsRec(struct TrieNode* root, string currPrefix)
             currPrefix.push_back(97 + i);
  
             // recur over the rest
-            suggestionsRec(root->children[i], currPrefix);
+            suggestionsRec(root->children[i], currPrefix);      
             // remove last character
-            currPrefix.pop_back();
+            currPrefix.pop_back();      
         }
     }
+
+   
 }
  
 // print suggestions for given query prefix.
@@ -129,16 +150,16 @@ int printAutoSuggestions(TrieNode* root, const string query)
     }
  
     // If prefix is present as a word.
-    bool isWord = (pCrawl->isWordEnd == true);
+    bool isWord = (pCrawl->isWordEnd == true);  //true
  
     // If prefix is last node of tree (has no
     // children)
-    bool isLast = isLastNode(pCrawl);
+    bool isLast = isLastNode(pCrawl);     //true
  
     // If prefix is present as a word, but
     // there is no subtree below the last
     // matching node.
-    if (isWord && isLast)
+    if (isWord && isLast)        true AND true   ->   true     ||
     {
         cout << query << endl;
         return -1;
@@ -174,6 +195,138 @@ int main()
  
     else if (comp == 0)
         cout << "No string found with this prefix\n";
- 
+
     return 0;
 }
+
+
+
+
+
+
+// a = 2
+// b = 3
+
+
+// int olda = a 
+// a = b
+// b = olda
+
+
+// a = b
+// b = a
+
+
+
+a= 3
+b= 2
+
+
+
+int* p =&a
+
+
+*p //3
+p 
+
+ //address of 3
+
+
+
+
+int arr[10] = {1,2,3,4,5,6}
+arrays are datastructure
+arr[0]
+arr[4]
+
+
+struct custom{
+    int arr[100];
+    int data;
+}
+
+tree  
+
+Search Auto complete
+
+TRIE - custom datastructure
+
+
+a-z ->26
+
+sukh
+sukhpreet
+sukhkarman
+aman
+amrit
+simran
+
+| a | b |c  | d   |e  |  |  |  |    | |  |  | s *|    | |  |  |  |    | |  |  |  | z   |
+                                              |
+                                              |
+   | a | b |c  | d   |e  |  |  | i* |    | |  |  | s |    | |  |  |  |    | | u *|  |  | z   |                                                 
+                                                                            |
+      | a | b |c  | d   |e  |  |  |  |   k* | |  |  | s |    | |  |  |  |    | | u |  |  | z   |                                                                           
+                                         |
+   | a | b |c  | d   |e  |  | h* |  |    | |  |  | s |    | |  |  |  |    | | u *|  |  | z   |  ) lastnum =true
+
+                                            
+amr
+
+
+s
+
+sukh
+sukhpreet
+sukhkarman
+
+
+int arr[10]={1 ,2 ,4 ,5 ,6 ,7 ,8 }
+
+int* arr[10]
+
+*p =&a
+
+{,,,,,,,,}
+*
+
+
+
+
+
+AND    &&
+OR     ||
+NOT     !
+
+
+
+!TRUE = false
+
+
+true || false   => true
+false|| false   => false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+||
+|sr5  |
+|sr4 |
+|sr3  |
+|sr2  |
+|sr1  |
