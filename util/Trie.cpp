@@ -43,6 +43,8 @@ void insert(struct TrieNode *root,  const string key)
             pCrawl->children[index] = getNode();
  
         pCrawl = pCrawl->children[index];
+         pCrawl = pCrawl-> next;  //ll
+
     }
  
     // mark last node as leaf
@@ -330,3 +332,152 @@ false|| false   => false
 |sr3  |
 |sr2  |
 |sr1  |
+
+
+
+
+array[]  = [1,2,3,4,5,6,7]
+
+
+array[3] = 4   time complexity - O(1)
+
+
+
+calculate sum of elements in an array
+
+int sum = 0;
+for( int i=0;i<array.length;i++){
+
+    sum = sum + array[i];
+
+}
+return sum
+
+o(n)
+
+
+
+
+calculate sum of first n natural numbers;
+
+
+int sum = 0;
+
+for( int i=0;i<n;i++){
+  for(int j=0;j<m;j++)
+    sum = sum + i;
+
+}
+return sum
+time complexity o(N*N)
+space comlexity o(1)
+
+
+1+2+3+4+5 = 15
+(5*6)/2
+
+sum = (n*(n+1))/2;
+
+time complexity O(1);
+
+
+binary search
+
+
+
+
+array[]  = [1,2,3,4,5,6,7]
+search 5
+
+[2,4,6,8,9,10,56,300]
+l         mid         r
+
+search 10
+
+
+
+for(int i=0;i<arr.length;i++){
+
+    if(arr[i]==10){
+        return i;
+    }
+
+}
+O(N)
+binary search  (array should be sorted)
+
+O(log(n))
+
+O(1)
+time complexity
+space complexity
+
+
+
+map
+
+["key","value"]
+1 -> 2
+ 
+a -> 97
+b -> 98
+
+
+
+
+given an array
+
+[1,1,1,2,2,3,4,4]
+
+int temp = arr[0];
+int count=1;
+int minCount = Integer.MAX_VALUE;
+for(int i=1;i<arr.length;i++){
+
+    if(arr[i]==temp){
+        count++;
+    }else{
+        temp = arr[i];
+        if(minCount> count){
+            minCount= count;
+        } 
+        count= 1;
+    }
+
+}
+
+return minCount;
+
+
+
+
+
+arr[]={1,2,3,4,5,6,7,8}
+3 - 10
+o(N)
+
+
+LINKEDLIST
+
+[] -> [] -> [] -> []
+
+
+BINARY TREES
+
+   []
+
+[]    []
+
+
+
+Class -real world example , Objects ,  Inheretence , polymorphism
+
+
+
+
+            (Shapes)
+            no of edges
+
+        triangle   polygon
+            
+scalene  eq  iso      rectangle    square
